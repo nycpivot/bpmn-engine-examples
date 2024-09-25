@@ -1,0 +1,14 @@
+{
+  "name": "state",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bpmn-engine": "^22.0.3"
+  }
+}

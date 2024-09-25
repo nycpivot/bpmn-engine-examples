@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <process id="theProcess" isExecutable="true">
+  <startEvent id="theStart" />
+  <scriptTask id="readTask" scriptFormat="Javascript">
+    <script>
+	<![CDATA[
+		const self = this;
+		const read = self.environment.services.read;
+		    
+		read();
+		next();    
+	]]>
+    </script>
+  </scriptTask>
+  <userTask id="inputTask">
+
+  </userTask>
+  <endEvent id="theEnd" />
+  <sequenceFlow id="flow1" sourceRef="theStart" targetRef="readTask" />
+  <sequenceFlow id="flow2" sourceRef="readTask" targetRef="inputTask" />
+  <sequenceFlow id="flow4" sourceRef="inputTask" targetRef="theEnd" />
+  </process>
+</definitions>
+

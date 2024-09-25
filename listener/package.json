@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "bpmn-engine": "^22.0.2"
+  }
+}

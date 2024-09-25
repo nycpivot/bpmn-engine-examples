@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <process id="listener" isExecutable="true">
+    <dataObjectReference id="inputFromUserRef" dataObjectRef="inputFromUser" />
+    <dataObject id="inputFromUser" />
+    <startEvent id="start" />
+    <serviceTask id="readfile">
+      <ioSpecification id="readfile">
+      </ioSpecification>
+    </serviceTask>
+    <userTask id="userTask">
+      <ioSpecification id="inputSpec">
+        <dataOutput id="userInput" name="sirname" />
+      </ioSpecification>
+      <dataOutputAssociation id="associatedWith" sourceRef="userInput" targetRef="inputFromUserRef" />
+    </userTask>
+    <endEvent id="end" />
+    <sequenceFlow id="readfile" sourceRef="start" targetRef="readfile" />
+    <sequenceFlow id="flow2" sourceRef="readfile" targetRef="theEnd" />
+  </process>
+</definitions>
+
